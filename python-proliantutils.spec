@@ -1,12 +1,10 @@
-%{?!_licensedir:%global license %%doc}
 %{!?upstream_version: %global upstream_version %{version}}
 
 Name:           python-proliantutils
 Summary:        Client Library for interfacing with various devices in HP Proliant Servers
-Version:        2.1.0
-Release:        1%{?dist}
+Version:        XXX
+Release:        XXX
 License:        ASL 2.0
-Group:          System Environment/Base
 URL:            https://github.com/stackforge/proliantutils
 
 Source0:        https://pypi.python.org/packages/source/p/proliantutils/proliantutils-%{upstream_version}.tar.gz
@@ -45,6 +43,4 @@ Client Library for interfacing with various devices in HP Proliant Servers
 %exclude %{python2_sitelib}/proliantutils/*test*
 
 %changelog
-* Fri May 22 2015 John Trowbridge <jtrowbri@redhat.com> - 2.1.0-1
-- Initial package build
 
