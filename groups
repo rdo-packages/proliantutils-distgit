@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-48b1e405be0540f3a9c0dc4b7d488bb37affc9ea       	proliantutils-distgit-core
-5560a9adb8c42284717ec0bee90ce233057c6228        	proliantutils-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+48b1e405be0540f3a9c0dc4b7d488bb37affc9ea	proliantutils-distgit-core
+5560a9adb8c42284717ec0bee90ce233057c6228	openstack/proliantutils-distgit-ptl
+global:Registered-Users                 	Registered Users
