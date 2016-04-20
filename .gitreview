@@ -1,5 +1,5 @@
 [gerrit]
-host=review.gerrithub.io
+host=review.rdoproject.org
 port=29418
-project=openstack-packages/python-proliantutils
-defaultbranch=rpm-master
+project=openstack/proliantutils-distgit
+defaultbranch=mitaka-rdo
