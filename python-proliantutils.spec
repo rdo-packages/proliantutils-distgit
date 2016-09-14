@@ -3,7 +3,7 @@
 Name:           python-proliantutils
 Summary:        Client Library for interfacing with various devices in HP Proliant Servers
 Version:        2.1.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 License:        ASL 2.0
 URL:            https://github.com/stackforge/proliantutils
 
@@ -14,8 +14,8 @@ BuildRequires:  python-setuptools
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 Requires: python-six
-Requires: python-oslo-concurrency
-Requires: python-oslo-utils
+Requires: python2-oslo-concurrency
+Requires: python2-oslo-utils
 Requires: python-jsonschema
 
 %prep
@@ -43,6 +43,9 @@ Client Library for interfacing with various devices in HP Proliant Servers
 %exclude %{python2_sitelib}/proliantutils/*test*
 
 %changelog
+* Wed Sep 14 2016 Alejandro Andreu <alejandroandreu@openmailbox.org> 2.1.7-2
+- Fix dependency naming for python-oslo-* packages
+
 * Thu Mar 24 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.1.7-1
 - Update to 2.1.7
 
