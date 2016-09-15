@@ -7,16 +7,17 @@ Release:        XXX
 License:        ASL 2.0
 URL:            https://github.com/stackforge/proliantutils
 
-Source0:        https://pypi.python.org/packages/source/p/proliantutils/proliantutils-%{upstream_version}.tar.gz
+Source0:        https://pypi.io/packages/source/p/proliantutils/proliantutils-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  python-setuptools
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
-Requires: python-six
+Requires: python-six >= 1.9.0
 Requires: python-oslo-concurrency
 Requires: python-oslo-utils
 Requires: python-jsonschema
+Requires: python-requests
 
 %prep
 %autosetup -v -p 1 -n proliantutils-%{upstream_version}
