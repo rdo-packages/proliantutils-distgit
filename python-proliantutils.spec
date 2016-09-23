@@ -2,7 +2,7 @@
 
 Name:           python-proliantutils
 Summary:        Client Library for interfacing with various devices in HP Proliant Servers
-Version:        2.1.9
+Version:        2.1.11
 Release:        1%{?dist}
 License:        ASL 2.0
 URL:            https://github.com/stackforge/proliantutils
@@ -44,6 +44,9 @@ Client Library for interfacing with various devices in HP Proliant Servers
 %exclude %{python2_sitelib}/proliantutils/*test*
 
 %changelog
+* Fri Sep 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.1.11-1
+- Update to 2.1.11
+
 * Fri Sep 16 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.1.9-1
 - Update to 2.1.9
 
