@@ -13,6 +13,7 @@ BuildArch:      noarch
 BuildRequires:  python-setuptools
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
+Requires: pysnmp
 Requires: python-six >= 1.9.0
 Requires: python-oslo-concurrency
 Requires: python-oslo-utils
