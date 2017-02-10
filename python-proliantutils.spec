@@ -7,7 +7,7 @@ Release:        XXX
 License:        ASL 2.0
 URL:            https://github.com/stackforge/proliantutils
 
-Source0:        https://pypi.io/packages/source/p/proliantutils/proliantutils-%{upstream_version}.tar.gz
+Source0:        https://tarballs.openstack.org/proliantutils/proliantutils-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  python-setuptools
