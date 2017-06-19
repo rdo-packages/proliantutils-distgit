@@ -50,5 +50,3 @@ Client Library for interfacing with various devices in HP Proliant Servers
 
 * Fri Sep 16 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.1.9-1
 - Update to 2.1.9
-
-
