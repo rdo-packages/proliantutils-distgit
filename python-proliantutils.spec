@@ -47,5 +47,3 @@ Client Library for interfacing with various devices in HP Proliant Servers
 %changelog
 * Mon Feb 13 2017 Alfredo Moralejo <amoralej@redhat.com> 2.2.0-1
 - Update to 2.2.0
-
-
