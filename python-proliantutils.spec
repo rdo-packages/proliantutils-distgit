@@ -19,6 +19,7 @@ Requires: python-oslo-concurrency
 Requires: python-oslo-utils
 Requires: python-jsonschema
 Requires: python-requests
+Requires: python-sushy
 
 %prep
 %autosetup -v -p 1 -n proliantutils-%{upstream_version}
