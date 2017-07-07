@@ -46,4 +46,3 @@ Client Library for interfacing with various devices in HP Proliant Servers
 %exclude %{python2_sitelib}/proliantutils/*test*
 
 %changelog
-
