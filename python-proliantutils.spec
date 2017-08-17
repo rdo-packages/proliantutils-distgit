@@ -15,11 +15,14 @@ BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 Requires: pysnmp
 Requires: python-six >= 1.9.0
-Requires: python-oslo-concurrency
-Requires: python-oslo-utils
+Requires: python-oslo-concurrency >= 3.8.0
+Requires: python-oslo-utils  >= 3.20.0
+Requires: python-oslo-serialization >= 1.10.0
 Requires: python-jsonschema
 Requires: python-requests
-Requires: python-sushy
+Requires: python-sushy >= 1.0.0
+Requires: python-pbr >= 2.0.0
+Requires: python-retrying
 
 %prep
 %autosetup -v -p 1 -n proliantutils-%{upstream_version}
