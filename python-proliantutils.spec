@@ -2,8 +2,8 @@
 
 Name:           python-proliantutils
 Summary:        Client Library for interfacing with various devices in HP Proliant Servers
-Version:        XXX
-Release:        XXX
+Version:        2.4.0
+Release:        1%{?dist}
 License:        ASL 2.0
 URL:            https://github.com/openstack/proliantutils
 
@@ -49,3 +49,6 @@ Client Library for interfacing with various devices in HP Proliant Servers
 %exclude %{python2_sitelib}/proliantutils/*test*
 
 %changelog
+* Thu Aug 24 2017 Alfredo Moralejo <amoralej@redhat.com> 2.4.0-1
+- Update to 2.4.0
+
