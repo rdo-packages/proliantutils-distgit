@@ -13,6 +13,7 @@ BuildArch:      noarch
 BuildRequires:  python-setuptools
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
+BuildRequires:  openstack-macros
 Requires: pysnmp
 Requires: python-six >= 1.9.0
 Requires: python-oslo-concurrency >= 3.8.0
@@ -31,7 +32,7 @@ rm -rf *.egg-info
 
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config
-rm -rf {test-,}requirements.txt tools/{pip,test}-requires
+%py_req_cleanup
 
 %build
 %{__python2} setup.py build
