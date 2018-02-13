@@ -10,19 +10,19 @@ URL:            https://github.com/openstack/proliantutils
 Source0:        https://tarballs.openstack.org/proliantutils/proliantutils-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  python-setuptools
+BuildRequires:  python2-setuptools
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
+BuildRequires:  python2-pbr
 BuildRequires:  openstack-macros
 Requires: pysnmp
-Requires: python-six >= 1.9.0
-Requires: python-oslo-concurrency >= 3.8.0
-Requires: python-oslo-utils  >= 3.20.0
-Requires: python-oslo-serialization >= 1.10.0
-Requires: python-jsonschema
-Requires: python-requests
-Requires: python-sushy >= 1.0.0
-Requires: python-pbr >= 2.0.0
+Requires: python2-six >= 1.9.0
+Requires: python2-oslo-concurrency >= 3.8.0
+Requires: python2-oslo-utils  >= 3.20.0
+Requires: python2-oslo-serialization >= 1.10.0
+Requires: python2-jsonschema
+Requires: python2-requests
+Requires: python2-sushy >= 1.0.0
+Requires: python2-pbr >= 2.0.0
 Requires: python-retrying
 
 %prep
