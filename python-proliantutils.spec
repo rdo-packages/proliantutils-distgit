@@ -1,3 +1,14 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}}
 
 Name:           python-proliantutils
@@ -10,20 +21,35 @@ URL:            https://github.com/openstack/proliantutils
 Source0:        https://tarballs.openstack.org/proliantutils/proliantutils-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-devel
-BuildRequires:  python2-pbr
+
+%description
+Client Library for interfacing with various devices in HP Proliant Servers
+
+%package -n     python%{pyver}-proliantutils
+Summary:        %{sum}
+%{?python_provide:%python_provide python%{pyver}-proliantutils}
+
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-pbr
 BuildRequires:  openstack-macros
+Requires: python%{pyver}-six >= 1.10.0
+Requires: python%{pyver}-oslo-concurrency >= 3.8.0
+Requires: python%{pyver}-oslo-utils  >= 3.20.0
+Requires: python%{pyver}-oslo-serialization >= 1.10.0
+Requires: python%{pyver}-jsonschema
+Requires: python%{pyver}-requests
+Requires: python%{pyver}-sushy >= 1.3.1
+Requires: python%{pyver}-pbr >= 2.0.0
+
+# Handle python2 exception
+%if %{pyver} == 2
 Requires: pysnmp
-Requires: python2-six >= 1.10.0
-Requires: python2-oslo-concurrency >= 3.8.0
-Requires: python2-oslo-utils  >= 3.20.0
-Requires: python2-oslo-serialization >= 1.10.0
-Requires: python2-jsonschema
-Requires: python2-requests
-Requires: python2-sushy >= 1.3.1
-Requires: python2-pbr >= 2.0.0
 Requires: python-retrying
+%else
+Requires: python%{pyver}-pysnmp
+Requires: python%{pyver}-retrying
+%endif
 
 %prep
 %autosetup -v -p 1 -n proliantutils-%{upstream_version}
@@ -35,18 +61,18 @@ rm -rf *.egg-info
 %py_req_cleanup
 
 %build
-%{__python2} setup.py build
+%{pyver_build}
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
+%{pyver_install}
 
-%description
+%description -n     python%{pyver}-proliantutils
 Client Library for interfacing with various devices in HP Proliant Servers
 
-%files
+%files -n     python%{pyver}-proliantutils
 %license LICENSE
 %doc README.rst
-%{python2_sitelib}/proliantutils*
-%exclude %{python2_sitelib}/proliantutils/*test*
+%{pyver_sitelib}/proliantutils*
+%exclude %{pyver_sitelib}/proliantutils/*test*
 
 %changelog
