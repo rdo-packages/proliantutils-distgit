@@ -13,8 +13,8 @@
 
 Name:           python-proliantutils
 Summary:        Client Library for interfacing with various devices in HP Proliant Servers
-Version:        XXX
-Release:        XXX
+Version:        2.8.2
+Release:        1%{?dist}
 License:        ASL 2.0
 URL:            https://github.com/openstack/proliantutils
 
@@ -76,3 +76,6 @@ Client Library for interfacing with various devices in HP Proliant Servers
 %exclude %{pyver_sitelib}/proliantutils/*test*
 
 %changelog
+* Wed Mar 13 2019 RDO <dev@lists.rdoproject.org> 2.8.2-1
+- Update to 2.8.2
+
