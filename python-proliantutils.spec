@@ -33,13 +33,13 @@ BuildRequires:  python%{pyver}-setuptools
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
 BuildRequires:  openstack-macros
-Requires: python%{pyver}-six >= 1.10.0
+Requires: python%{pyver}-six >= 1.9.0
 Requires: python%{pyver}-oslo-concurrency >= 3.8.0
 Requires: python%{pyver}-oslo-utils  >= 3.20.0
 Requires: python%{pyver}-oslo-serialization >= 1.10.0
 Requires: python%{pyver}-jsonschema
 Requires: python%{pyver}-requests
-Requires: python%{pyver}-sushy >= 1.8.0
+Requires: python%{pyver}-sushy >= 3.1.0
 Requires: python%{pyver}-pbr >= 2.0.0
 
 # Handle python2 exception
