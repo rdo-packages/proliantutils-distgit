@@ -1,13 +1,16 @@
 %{!?upstream_version: %global upstream_version %{version}}
 
+%{?dlrn: %global tarsources proliantutils-%{upstream_version}}
+%{!?dlrn: %global tarsources proliantutils}
+
 Name:           python-proliantutils
 Summary:        Client Library for interfacing with various devices in HP Proliant Servers
-Version:        XXX
-Release:        XXX
+Version:        2.9.4
+Release:        1%{?dist}
 License:        ASL 2.0
 URL:            https://github.com/openstack/proliantutils
 
-Source0:        https://tarballs.openstack.org/proliantutils/proliantutils-%{upstream_version}.tar.gz
+Source0:        https://opendev.org/x/proliantutils/archive/%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 
@@ -22,6 +25,7 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  openstack-macros
+BuildRequires:  git
 Requires: python3-six >= 1.9.0
 Requires: python3-oslo-concurrency >= 3.8.0
 Requires: python3-oslo-utils  >= 3.20.0
@@ -35,7 +39,7 @@ Requires: python3-pysnmp
 Requires: python3-retrying
 
 %prep
-%autosetup -v -p 1 -n proliantutils-%{upstream_version}
+%autosetup -v -p 1 -n %{tarsources} -S git
 
 rm -rf *.egg-info
 
@@ -59,3 +63,6 @@ Client Library for interfacing with various devices in HP Proliant Servers
 %exclude %{python3_sitelib}/proliantutils/*test*
 
 %changelog
+* Mon Apr 27 2020 RDO <dev@lists.rdoproject.org> 2.9.4-1
+- Update to 2.9.4
+
