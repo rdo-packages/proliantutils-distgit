@@ -25,7 +25,7 @@ BuildRequires:  python3-setuptools
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  openstack-macros
-BuildRequires:  git
+BuildRequires:  git-core
 Requires: python3-six >= 1.9.0
 Requires: python3-oslo-concurrency >= 3.8.0
 Requires: python3-oslo-utils  >= 3.20.0
