@@ -30,13 +30,14 @@ Requires: python3-six >= 1.9.0
 Requires: python3-oslo-concurrency >= 3.8.0
 Requires: python3-oslo-utils  >= 3.20.0
 Requires: python3-oslo-serialization >= 1.10.0
-Requires: python3-jsonschema
-Requires: python3-requests
+Requires: python3-jsonschema >= 2.6.0
+Requires: python3-requests >= 2.10.0
 Requires: python3-sushy >= 3.1.0
 Requires: python3-pbr >= 2.0.0
 
-Requires: python3-pysnmp
-Requires: python3-retrying
+Requires: python3-pysnmp >= 4.2.3
+Requires: python3-retrying >= 1.2.3
+Requires: python3-pyOpenSSL >= 19.1.0
 
 %prep
 %autosetup -v -p 1 -n %{tarsources} -S git
