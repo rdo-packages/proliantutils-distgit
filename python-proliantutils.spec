@@ -32,7 +32,7 @@ Requires: python3-oslo-utils  >= 3.20.0
 Requires: python3-oslo-serialization >= 1.10.0
 Requires: python3-jsonschema >= 2.6.0
 Requires: python3-requests >= 2.10.0
-Requires: python3-sushy >= 3.1.0
+Requires: python3-sushy >= 4.1.0
 Requires: python3-pbr >= 2.0.0
 
 Requires: python3-pysnmp >= 4.2.3
