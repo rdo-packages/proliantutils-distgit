@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b4269e6_5e486fc5",
+        "filename": "python-proliantutils.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-27T07:32:54Z",
+      "side": 1,
+      "message": "Upstream move from pysnmp to fork project pysnmp-lextudio [1]\nWe\u0027ll have to build package for those.\n\n[1] https://review.opendev.org/c/x/proliantutils/+/885943",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 45
+      },
+      "revId": "508d61820b874678ce609de2628cb60a2f131947",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
