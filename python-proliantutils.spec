@@ -1,4 +1,6 @@
 %{!?upstream_version: %global upstream_version %{version}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
 
 %{?dlrn: %global tarsources proliantutils-%{upstream_version}}
 %{!?dlrn: %global tarsources proliantutils}
@@ -7,7 +9,7 @@ Name:           python-proliantutils
 Summary:        Client Library for interfacing with various devices in HP Proliant Servers
 Version:        XXX
 Release:        XXX
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            https://github.com/openstack/proliantutils
 
 Source0:        https://opendev.org/x/proliantutils/archive/%{upstream_version}.tar.gz
@@ -19,40 +21,42 @@ Client Library for interfacing with various devices in HP Proliant Servers
 
 %package -n     python3-proliantutils
 Summary:        Client Library for interfacing with various devices in HP Proliant Servers
-%{?python_provide:%python_provide python3-proliantutils}
 
-BuildRequires:  python3-setuptools
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  openstack-macros
 BuildRequires:  git-core
-Requires: python3-six >= 1.9.0
-Requires: python3-oslo-concurrency >= 3.8.0
-Requires: python3-oslo-utils  >= 3.20.0
-Requires: python3-oslo-serialization >= 1.10.0
-Requires: python3-jsonschema >= 2.6.0
-Requires: python3-requests >= 2.10.0
-Requires: python3-sushy >= 4.1.0
-Requires: python3-pbr >= 2.0.0
-
-Requires: python3-pysnmp >= 4.2.3
-Requires: python3-retrying >= 1.2.3
-Requires: python3-pyOpenSSL
-
 %prep
 %autosetup -v -p 1 -n %{tarsources} -S git
 
 rm -rf *.egg-info
 
-# Remove the requirements file so that pbr hooks don't add it
-# to distutils requires_dist config
-%py_req_cleanup
+
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+sed -i /^pyasn1-lextudio.*/d requirements.txt
+sed -i /^pyasn1-modules-lextudio.*/d requirements.txt
+sed -i /^pysnmp-lextudio.*/d requirements.txt
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs};do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+%generate_buildrequires
+%pyproject_buildrequires -t -e %{default_toxenv}
 
 %build
-%{py3_build}
+%pyproject_wheel
 
 %install
-%{py3_install}
+%pyproject_install
 
 %description -n     python3-proliantutils
 Client Library for interfacing with various devices in HP Proliant Servers
