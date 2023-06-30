@@ -46,6 +46,30 @@
       },
       "revId": "508d61820b874678ce609de2628cb60a2f131947",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dd46374_66a0e9c6",
+        "filename": "python-proliantutils.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-30T12:36:45Z",
+      "side": 1,
+      "message": "I added back the Requires on python3-pysnmp in order to pull same deps, but I need to check if prolianutils works with ols pysnmp",
+      "parentUuid": "55dade67_62a59e76",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 45
+      },
+      "revId": "508d61820b874678ce609de2628cb60a2f131947",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
