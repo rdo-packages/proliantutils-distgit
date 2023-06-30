@@ -22,6 +22,30 @@
       },
       "revId": "508d61820b874678ce609de2628cb60a2f131947",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55dade67_62a59e76",
+        "filename": "python-proliantutils.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-06-30T11:31:37Z",
+      "side": 1,
+      "message": "don\u0027t it work with the original ones, i guess that\u0027s why we are losing some deps:\n\npython3-pyasn1-0.4.8-6.el9.noarch\t\t\t      \u003c\npython3-pysnmp-4.4.12-6.el9s.noarch\t\t\t      \u003c\npython3-smi-0.3.4-10.el9s.noarch\t\t\t      \u003c\n\ni wonder if proliantutils works at all withouth any of the old or forks.\n\nWe\u0027d have to check with the maintainers it this is still used",
+      "parentUuid": "9b4269e6_5e486fc5",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 45
+      },
+      "revId": "508d61820b874678ce609de2628cb60a2f131947",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
