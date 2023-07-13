@@ -70,6 +70,30 @@
       },
       "revId": "508d61820b874678ce609de2628cb60a2f131947",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8c57390_d96430c9",
+        "filename": "python-proliantutils.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-07-13T08:56:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8dd46374_66a0e9c6",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 45
+      },
+      "revId": "508d61820b874678ce609de2628cb60a2f131947",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
