@@ -1,6 +1,4 @@
 %{!?upstream_version: %global upstream_version %{version}}
-# we are excluding some runtime reqs from automatic generator
-%global excluded_reqs pyasn1-lextudio pyasn1-modules-lextudio pysnmp-lextudio
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
 
@@ -28,7 +26,6 @@ BuildRequires:  python3-devel
 BuildRequires:  pyproject-rpm-macros
 BuildRequires:  openstack-macros
 BuildRequires:  git-core
-Requires: python3-pysnmp >= 4.2.3
 %prep
 %autosetup -v -p 1 -n %{tarsources} -S git
 
@@ -47,11 +44,6 @@ for pkg in %{excluded_brs};do
       sed -i /^${pkg}.*/d $reqfile
     fi
   done
-done
-
-# Exclude some bad-known runtime reqs
-for pkg in %{excluded_reqs};do
-  sed -i /^${pkg}.*/d requirements.txt
 done
 
 %generate_buildrequires
